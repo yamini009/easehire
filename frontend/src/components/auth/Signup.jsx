@@ -71,58 +71,63 @@ const Signup = () => {
       <div className="flex justify-center items-center max-w-7xl mx-auto px-4">
         <form
           onSubmit={submitHandler}
-          className="w-full sm:w-[90%] md:w-[70%] lg:w-[45%] bg-[#e1e6d5] border border-[#d1d5db] rounded-md shadow-md p-8 my-10"
+          className="w-full sm:w-[90%] md:w-[70%] lg:w-[45%] bg-[#e1e6d5] border border-[#d1d5db] rounded-2xl shadow-lg p-10 my-10"
         >
-          <h1 className="font-bold text-2xl mb-6 text-center text-[#1e1e1e]">
+          <h1 className="font-bold text-3xl mb-8 text-center text-[#1e1e1e]">
             Sign Up
           </h1>
 
-          <div className="mb-4">
+          {/* Full Name */}
+          <div className="mb-5">
             <Label className="text-[#2d2d2d]">Full Name</Label>
             <Input
               type="text"
               name="fullname"
               value={input.fullname}
               onChange={changeEventHandler}
-              placeholder="Your full name"
+              placeholder="Enter your full name"
             />
           </div>
 
-          <div className="mb-4">
+          {/* Email */}
+          <div className="mb-5">
             <Label className="text-[#2d2d2d]">Email</Label>
             <Input
               type="email"
               name="email"
               value={input.email}
               onChange={changeEventHandler}
-              placeholder="Tell us your Email ID"
+              placeholder="you@example.com"
             />
           </div>
 
-          <div className="mb-4">
+          {/* Phone */}
+          <div className="mb-5">
             <Label className="text-[#2d2d2d]">Phone Number</Label>
             <Input
               type="text"
               name="phoneNumber"
               value={input.phoneNumber}
               onChange={changeEventHandler}
-              placeholder="Enter your Mobile Number"
+              placeholder="Enter your phone number"
             />
           </div>
 
-          <div className="mb-4">
+          {/* Password */}
+          <div className="mb-5">
             <Label className="text-[#2d2d2d]">Password</Label>
             <Input
               type="password"
               name="password"
               value={input.password}
               onChange={changeEventHandler}
-              placeholder="(Minimum six characters)"
+              placeholder="Minimum 6 characters"
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4">
-            <div className="flex items-center gap-4">
+          {/* Role and Profile Image */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-6">
+            <div className="flex gap-4">
               <div className="flex items-center gap-2">
                 <Input
                   type="radio"
@@ -130,7 +135,6 @@ const Signup = () => {
                   value="student"
                   checked={input.role === 'student'}
                   onChange={changeEventHandler}
-                  className="cursor-pointer"
                 />
                 <Label className="text-[#2d2d2d]">Student</Label>
               </div>
@@ -141,37 +145,38 @@ const Signup = () => {
                   value="recruiter"
                   checked={input.role === 'recruiter'}
                   onChange={changeEventHandler}
-                  className="cursor-pointer"
                 />
                 <Label className="text-[#2d2d2d]">Recruiter</Label>
               </div>
             </div>
+
             <div className="flex items-center gap-2">
               <Label className="text-[#2d2d2d]">Profile</Label>
               <Input
                 type="file"
                 accept="image/*"
                 onChange={changeFileHandler}
-                className="cursor-pointer"
               />
             </div>
           </div>
 
+          {/* Submit Button */}
           {loading ? (
-            <Button disabled className="w-full mt-6 bg-[#7a9c4f] text-white">
+            <Button disabled className="w-full mt-8 bg-[#7a9c4f] text-white">
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Please wait
+              Signing you up...
             </Button>
           ) : (
             <Button
               type="submit"
-              className="w-full mt-6 bg-[#7a9c4f] hover:bg-[#65843f] text-white"
+              className="w-full mt-8 bg-[#7a9c4f] hover:bg-[#65843f] text-white transition-colors duration-200"
             >
-              Signup
+              Sign Up
             </Button>
           )}
 
-          <p className="text-sm text-center mt-4 text-[#333]">
+          {/* Redirect */}
+          <p className="text-sm text-center mt-6 text-[#2d2d2d]">
             Already have an account?{' '}
             <Link to="/login" className="text-blue-600 hover:underline">
               Login
