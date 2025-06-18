@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className='bg-[#e1e6d5] font-sans text-[#2d2d2d] shadow-sm'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16 px-4'>
                 <div>
-                    <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                    <h1 className='text-2xl font-bold'>Job<span className='text-[#7a9c4f]'>Portal</span></h1>
                 </div>
 
                 <div className='flex items-center gap-12'>
@@ -61,7 +61,7 @@ const Navbar = () => {
                                     <Button variant="outline" className="text-[#2d2d2d] border-gray-400 hover:bg-gray-100">Login</Button>
                                 </Link>
                                 <Link to="/signup">
-                                    <Button className="bg-[#6A38C2] hover:bg-[#5b30a6] text-white">Signup</Button>
+                                    <Button className="bg-[#7a9c4f] hover:bg-[#65843f] text-white">Signup</Button>
                                 </Link>
                             </div>
                         ) : (
